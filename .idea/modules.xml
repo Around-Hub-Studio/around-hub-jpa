@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/basic_jpa/basic_jpa.iml" filepath="$PROJECT_DIR$/basic_jpa/basic_jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entity_manager_factory/entity_manager_factory.iml" filepath="$PROJECT_DIR$/entity_manager_factory/entity_manager_factory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple_example/simple_example.iml" filepath="$PROJECT_DIR$/simple_example/simple_example.iml" />
+    </modules>
+  </component>
+</project>

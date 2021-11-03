@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="entity_manager_factory" />
+        <module name="simple_example" />
+        <module name="basic_jpa" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="basic_jpa" target="11" />
+      <module name="entity_manager_factory" target="11" />
+      <module name="simple_example" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
