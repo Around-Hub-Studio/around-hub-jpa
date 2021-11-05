@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/basic_jpa/basic_jpa.iml" filepath="$PROJECT_DIR$/basic_jpa/basic_jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/entity_manager_factory/entity_manager_factory.iml" filepath="$PROJECT_DIR$/entity_manager_factory/entity_manager_factory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/get_reference_example/get_reference_example.iml" filepath="$PROJECT_DIR$/get_reference_example/get_reference_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/id_generation/id_generation.iml" filepath="$PROJECT_DIR$/id_generation/id_generation.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple_example/simple_example.iml" filepath="$PROJECT_DIR$/simple_example/simple_example.iml" />
     </modules>
   </component>

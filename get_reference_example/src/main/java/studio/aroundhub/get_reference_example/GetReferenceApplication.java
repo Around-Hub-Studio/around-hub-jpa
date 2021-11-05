@@ -1,4 +1,4 @@
-package studio.aroundhub.simple_example;
+package studio.aroundhub.get_reference_example;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import studio.aroundhub.simple_example.common.exceptions.NotFoundException;
-import studio.aroundhub.simple_example.entity.UserEntity;
-import studio.aroundhub.simple_example.factory.CEntityManagerFactory;
-import studio.aroundhub.simple_example.service.UserService;
-import studio.aroundhub.simple_example.service.impl.UserServiceImpl;
+import studio.aroundhub.get_reference_example.entity.UserEntity;
+import studio.aroundhub.get_reference_example.exceptions.NotFoundException;
+import studio.aroundhub.get_reference_example.factory.CEntityManagerFactory;
+import studio.aroundhub.get_reference_example.service.UserService;
+import studio.aroundhub.get_reference_example.service.impl.UserServiceImpl;
 
-public class SimpleExampleApplication {
+public class GetReferenceApplication {
 
     public static void main(String[] args) throws IOException {
 
@@ -38,6 +38,20 @@ public class SimpleExampleApplication {
 
             } else if (splitCommand[0].equalsIgnoreCase("select")) {
                 Optional<UserEntity> userEntity = userService.getUser(splitCommand[1]);
+                if (userEntity.isPresent()) {
+                    UserEntity user = userEntity.get();
+                    System.out.println("email : " + user.getEmail());
+                    System.out.println("name : " + user.getName());
+                    System.out.println("created date : " + user.getCreatedAt());
+                    System.out.println("updated date : " + user.getUpdatedAt());
+
+                } else {
+                    System.out.println("값을 찾을 수 없습니다.");
+                }
+
+            } else if (splitCommand[0].equalsIgnoreCase("select2")) {
+                Optional<UserEntity> userEntity = userService.getReferenceUser(splitCommand[1]);
+
                 if (userEntity.isPresent()) {
                     UserEntity user = userEntity.get();
                     System.out.println("email : " + user.getEmail());
@@ -88,7 +102,7 @@ public class SimpleExampleApplication {
 
             } else {
                 System.out.println(
-                    "Please input Correct Command. ex) exit, insert, select, list, updateName, delete");
+                    "Please input Correct Command. ex) exit, insert, select, list, updateName, delete, getReference");
             }
 
         }

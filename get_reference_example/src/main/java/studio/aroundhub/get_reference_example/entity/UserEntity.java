@@ -1,4 +1,4 @@
-package studio.aroundhub.simple_example.entity;
+package studio.aroundhub.get_reference_example.entity;
 
 import java.time.LocalDateTime;
 import javax.persistence.Column;

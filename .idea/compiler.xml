@@ -8,12 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="entity_manager_factory" />
         <module name="simple_example" />
+        <module name="get_reference_example" />
+        <module name="id_generation" />
         <module name="basic_jpa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basic_jpa" target="11" />
       <module name="entity_manager_factory" target="11" />
+      <module name="get_reference_example" target="11" />
+      <module name="id_generation" target="11" />
       <module name="simple_example" target="11" />
     </bytecodeTargetLevel>
   </component>

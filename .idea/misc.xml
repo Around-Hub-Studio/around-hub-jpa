@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/basic_jpa/pom.xml" />
         <option value="$PROJECT_DIR$/entity_manager_factory/pom.xml" />
         <option value="$PROJECT_DIR$/simple_example/pom.xml" />
+        <option value="$PROJECT_DIR$/get_reference_example/pom.xml" />
+        <option value="$PROJECT_DIR$/id_generation/pom.xml" />
       </list>
     </option>
   </component>
