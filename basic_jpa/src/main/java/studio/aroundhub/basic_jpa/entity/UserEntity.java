@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class UserEntity {
 
-    @Id
+    @Id // primary Key
     private String email;
 
     private String name;
@@ -43,5 +43,9 @@ public class UserEntity {
         this.name = name;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public UserEntity(){
+
     }
 }
