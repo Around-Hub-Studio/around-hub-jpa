@@ -11,6 +11,7 @@
         <module name="get_reference_example" />
         <module name="id_generation" />
         <module name="basic_jpa" />
+        <module name="join_one_to_one" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="entity_manager_factory" target="11" />
       <module name="get_reference_example" target="11" />
       <module name="id_generation" target="11" />
+      <module name="join_one_to_one" target="11" />
       <module name="simple_example" target="11" />
     </bytecodeTargetLevel>
   </component>

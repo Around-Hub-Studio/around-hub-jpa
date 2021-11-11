@@ -92,6 +92,12 @@ public class UserServiceImpl implements UserService {
                 "select u from UserEntity u", UserEntity.class);
             List<UserEntity> userEntities = query.getResultList();
 
+            /*
+            아래 코드로 대체 가능
+            Query query = entityManager.createQuery("select u from UserEntity u");
+            List userEntities = query.getResultList();
+             */
+
             //entityManager.getTransaction().commit();
 
             return userEntities;
