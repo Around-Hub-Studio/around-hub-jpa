@@ -16,6 +16,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
 
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
 

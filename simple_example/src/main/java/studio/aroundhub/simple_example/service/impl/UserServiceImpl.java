@@ -32,9 +32,11 @@ public class UserServiceImpl implements UserService {
             entityManager.persist(userEntity);
             // 실제 DB 적용
             entityManager.getTransaction().commit();
+
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
             e.printStackTrace();
+
         } finally {
             entityManager.close();
         }
@@ -47,6 +49,8 @@ public class UserServiceImpl implements UserService {
         // 조회만 할 경우 트랜잭션은 필요하지 않음
 
         UserEntity userEntity = entityManager.find(UserEntity.class, email);
+
+        //if() 객체에 값이 들어왔는지?
 
         entityManager.close();
 

@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 import studio.aroundhub.id_generation.entity.DirectEntity;
 import studio.aroundhub.id_generation.entity.IdentityEntity;
+import studio.aroundhub.id_generation.entity.SequenceEntity;
 import studio.aroundhub.id_generation.entity.TableEntity;
 import studio.aroundhub.id_generation.factory.CEntityManagerFactory;
 import studio.aroundhub.id_generation.service.IdGenerationService;
@@ -113,7 +114,40 @@ public class IdGenerationServiceImpl implements IdGenerationService {
     }
 
     @Override
-    public Optional<IdentityEntity> selectTableEntity(Long id) {
+    public Optional<TableEntity> selectTableEntity(Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public void insertSequenceEntity(String name) {
+        EntityManager entityManager = CEntityManagerFactory.createEntityManger();
+
+        // EntityTransaction 으로 객체를 생성해서 트랜잭션 관리를 해도 되지만 EntityManager 만으로도 사용할 수 있음
+        entityManager.getTransaction().begin();
+
+        try {
+            SequenceEntity sequenceEntity = new SequenceEntity(name, LocalDateTime.now(),
+                                                         LocalDateTime.now());
+
+            // Persistence Context 에 객체 추가
+            entityManager.persist(sequenceEntity); // 이 단계에서 Id 값이 영속성 컨텍스트에 반영됨
+
+            System.out.println("id value : " + sequenceEntity.getId());
+
+            // 실제 DB 적용
+            entityManager.getTransaction().commit();
+
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            e.printStackTrace();
+
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public Optional<TableEntity> selectSequenceEntity(Long id) {
         return Optional.empty();
     }
 }

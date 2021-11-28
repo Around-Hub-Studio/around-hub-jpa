@@ -9,6 +9,10 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
+@SequenceGenerator(
+    name = "sequence_generator",
+    sequenceName = "my_seq",
+    allocationSize = 1)
 @Table(name = "sequence")
 public class SequenceEntity {
 
@@ -29,7 +33,6 @@ public class SequenceEntity {
     allocationSize : 시퀀스에서 읽어온 값을 기준으로 몇 개의 식별자를 생성할지 결정. 값은 1로 설정해야 함 (default : 50)
      */
     @Id
-    @SequenceGenerator(name = "sequence_generator", sequenceName = "my_seq", allocationSize = 1)
     @GeneratedValue(generator = "sequence_generator")
     private Long id;
 
@@ -57,9 +60,8 @@ public class SequenceEntity {
         return updatedAt;
     }
 
-    public SequenceEntity(Long id, String name, LocalDateTime createdAt,
+    public SequenceEntity(String name, LocalDateTime createdAt,
                           LocalDateTime updatedAt) {
-        this.id = id;
         this.name = name;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;

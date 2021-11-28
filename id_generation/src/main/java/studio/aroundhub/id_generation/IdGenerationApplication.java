@@ -38,6 +38,10 @@ public class IdGenerationApplication {
 
                 idGenerationService.insertTableEntity(splitCommand[1]);
 
+            }else if (splitCommand[0].equalsIgnoreCase("insertSequence")) {
+
+                idGenerationService.insertSequenceEntity(splitCommand[1]);
+
             }
         }
 
