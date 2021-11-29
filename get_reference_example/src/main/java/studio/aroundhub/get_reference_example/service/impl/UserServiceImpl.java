@@ -1,12 +1,9 @@
 package studio.aroundhub.get_reference_example.service.impl;
 
-import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import studio.aroundhub.get_reference_example.entity.UserEntity;
 import studio.aroundhub.get_reference_example.exceptions.DuplicateException;
-import studio.aroundhub.get_reference_example.exceptions.NotFoundException;
 import studio.aroundhub.get_reference_example.factory.CEntityManagerFactory;
 import studio.aroundhub.get_reference_example.service.UserService;
 
@@ -88,77 +85,4 @@ public class UserServiceImpl implements UserService {
         return Optional.ofNullable(userEntity);
     }
 
-    @Override
-    public void updateUserName(String email, String newName) {
-        EntityManager entityManager = CEntityManagerFactory.createEntityManger();
-
-        entityManager.getTransaction().begin();
-
-        try {
-
-            UserEntity userEntity = entityManager.find(UserEntity.class, email);
-
-            if (userEntity == null) {
-                throw new NotFoundException();
-            }
-
-            userEntity.changeName(newName);
-
-            entityManager.getTransaction().commit();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            entityManager.getTransaction().rollback();
-        } finally {
-            entityManager.close();
-        }
-
-    }
-
-    @Override
-    public List<UserEntity> getUserList() {
-
-        EntityManager entityManager = CEntityManagerFactory.createEntityManger();
-
-        try {
-            //entityManager.getTransaction().begin();
-
-            TypedQuery<UserEntity> query = entityManager.createQuery(
-                "select u from UserEntity u", UserEntity.class);
-            List<UserEntity> userEntities = query.getResultList();
-
-            //entityManager.getTransaction().commit();
-
-            return userEntities;
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            entityManager.close();
-        }
-
-        return null;
-    }
-
-    @Override
-    public void deleteUser(String email) {
-
-        EntityManager entityManager = CEntityManagerFactory.createEntityManger();
-
-        entityManager.getTransaction().begin();
-
-        try {
-            UserEntity userEntity = entityManager.find(UserEntity.class, email);
-            if (userEntity == null) {
-                throw new NotFoundException();
-            }
-            entityManager.remove(userEntity);
-            entityManager.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            entityManager.getTransaction().rollback();
-        } finally {
-            entityManager.close();
-        }
-
-    }
 }

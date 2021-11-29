@@ -12,10 +12,4 @@ public interface UserService {
 
     Optional<UserEntity> getReferenceUser(String email);
 
-    void updateUserName(String email, String newName);
-
-    List<UserEntity> getUserList();
-
-    void deleteUser(String email);
-
 }

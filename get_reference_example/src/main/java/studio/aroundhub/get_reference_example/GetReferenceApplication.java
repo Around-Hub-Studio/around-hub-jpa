@@ -4,10 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 import studio.aroundhub.get_reference_example.entity.UserEntity;
-import studio.aroundhub.get_reference_example.exceptions.NotFoundException;
 import studio.aroundhub.get_reference_example.factory.CEntityManagerFactory;
 import studio.aroundhub.get_reference_example.service.UserService;
 import studio.aroundhub.get_reference_example.service.impl.UserServiceImpl;
@@ -61,43 +59,6 @@ public class GetReferenceApplication {
 
                 } else {
                     System.out.println("값을 찾을 수 없습니다.");
-                }
-
-            } else if (splitCommand[0].equalsIgnoreCase("list")) {
-
-                List<UserEntity> userEntities = userService.getUserList();
-
-                if (userEntities.isEmpty()) {
-                    System.out.println("값이 없습니다.");
-
-                } else {
-                    userEntities.forEach(
-                        userEntity -> System.out.println("email : " + userEntity.getEmail()
-                                                         + ", name : " + userEntity.getName()
-                                                         + ", created Date : " +
-                                                         userEntity.getCreatedAt()
-                                                         + ", updated Date : " +
-                                                         userEntity.getUpdatedAt()));
-                }
-
-            } else if (splitCommand[0].equalsIgnoreCase("updateName")) {
-
-                try {
-                    userService.updateUserName(splitCommand[1], splitCommand[2]);
-                    System.out.println("갱신 완료");
-
-                } catch (NotFoundException e) {
-                    System.out.println("값이 존재하지 않습니다.");
-                }
-
-            } else if (splitCommand[0].equalsIgnoreCase("delete")) {
-
-                try {
-                    userService.deleteUser(splitCommand[1]);
-                    System.out.println("해당 데이터를 삭제하였습니다.");
-
-                } catch (NotFoundException e) {
-                    System.out.println("값이 존재하지 않습니다.");
                 }
 
             } else {
