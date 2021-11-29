@@ -30,6 +30,7 @@ public class SequenceEntity {
     /*
     name : 시퀀스 생성기의 이름을 지정. 이 이름은 @GeneratedValue 에서 사용됨
     sequenceName : 식별자(Id)를 생성할 때 사용할 Sequence 이름을 지정
+    initialValue : DDL을 통해 데이터베이스를 생성할 때 사용되는 값으로, 최초 설정되는 값을 정의
     allocationSize : 시퀀스에서 읽어온 값을 기준으로 몇 개의 식별자를 생성할지 결정. 값은 1로 설정해야 함 (default : 50)
      */
     @Id
