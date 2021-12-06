@@ -28,14 +28,20 @@ public class IdGenerationServiceImpl implements IdGenerationService {
         entityManager.getTransaction().begin();
 
         try {
+            System.out.println("CheckPoint 1");
             Long number = createNumber();
             DirectEntity directEntity = new DirectEntity(number, name, LocalDateTime.now(),
                                                          LocalDateTime.now());
 
+            System.out.println("CheckPoint 2");
             // Persistence Context 에 객체 추가
             entityManager.persist(directEntity);
+
+            System.out.println("CheckPoint 3");
             // 실제 DB 적용
             entityManager.getTransaction().commit();
+
+            System.out.println("CheckPoint 4");
 
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
@@ -60,17 +66,22 @@ public class IdGenerationServiceImpl implements IdGenerationService {
         entityManager.getTransaction().begin();
 
         try {
+            System.out.println("CheckPoint 1");
+
             IdentityEntity identityEntity = new IdentityEntity(name, LocalDateTime.now(),
                                                                LocalDateTime.now());
 
+            System.out.println("CheckPoint 2");
             // Persistence Context 에 객체 추가
             entityManager.persist(identityEntity); // 이 단계에서 Id 값이 영속성 컨텍스트에 반영됨
 
+            System.out.println("CheckPoint 3");
             System.out.println("id value : " + identityEntity.getNumber());
 
             // 실제 DB 적용
             entityManager.getTransaction().commit();
 
+            System.out.println("CheckPoint 4");
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
             e.printStackTrace();
@@ -93,16 +104,21 @@ public class IdGenerationServiceImpl implements IdGenerationService {
         entityManager.getTransaction().begin();
 
         try {
+            System.out.println("CheckPoint 1");
             TableEntity tableEntity = new TableEntity(name, LocalDateTime.now(),
                                                       LocalDateTime.now());
 
+            System.out.println("CheckPoint 2");
             // Persistence Context 에 객체 추가
             entityManager.persist(tableEntity); // 이 단계에서 Id 값이 영속성 컨텍스트에 반영됨
 
+            System.out.println("CheckPoint 3");
             System.out.println("id value : " + tableEntity.getNumber());
 
             // 실제 DB 적용
             entityManager.getTransaction().commit();
+
+            System.out.println("CheckPoint 4");
 
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
@@ -126,16 +142,21 @@ public class IdGenerationServiceImpl implements IdGenerationService {
         entityManager.getTransaction().begin();
 
         try {
+            System.out.println("CheckPoint 1");
             SequenceEntity sequenceEntity = new SequenceEntity(name, LocalDateTime.now(),
                                                          LocalDateTime.now());
 
+            System.out.println("CheckPoint 2");
             // Persistence Context 에 객체 추가
             entityManager.persist(sequenceEntity); // 이 단계에서 Id 값이 영속성 컨텍스트에 반영됨
 
+            System.out.println("CheckPoint 3");
             System.out.println("id value : " + sequenceEntity.getId());
 
             // 실제 DB 적용
             entityManager.getTransaction().commit();
+
+            System.out.println("CheckPoint 4");
 
         } catch (Exception e) {
             entityManager.getTransaction().rollback();

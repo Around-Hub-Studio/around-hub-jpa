@@ -17,7 +17,7 @@ public class IdGenerationApplication {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
-            System.out.println("Input your Command // [command] [email] [name]");
+            System.out.println("Input your Command // [command] [name]");
             String commandLine = br.readLine();
             String[] splitCommand = commandLine.split(" ");
 

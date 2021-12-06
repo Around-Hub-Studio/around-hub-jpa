@@ -44,12 +44,17 @@ public class UserServiceImpl implements UserService {
 
         // 조회만 할 경우 트랜잭션은 필요하지 않음
 
+        System.out.println("checkpoint 1");
+
         UserEntity userEntity = entityManager.find(UserEntity.class, email);
 
+        System.out.println("checkpoint 2");
         System.out.println(userEntity.getClass().getName());
 
+        System.out.println("checkpoint 3");
         entityManager.close();
 
+        System.out.println("checkpoint 4");
         return Optional.ofNullable(userEntity);
     }
 
@@ -62,24 +67,29 @@ public class UserServiceImpl implements UserService {
 
         UserEntity userEntity;
         try {
+            System.out.println("checkpoint 1");
             // getReference 메소드를 사용하면 엔티티 객체가 실제 사용되는 시점에 쿼리가 실행됨
             userEntity = entityManager.getReference(UserEntity.class, email);
-
+            System.out.println("checkpoint 2");
             // 아래 코드가 주석처리되면 오류가 발생하고, 주석을 해제하고 실행하면 오류가 발생하지 않음
             userEntity.getName();
+            System.out.println("checkpoint 3");
         } finally {
             entityManager.close();
+            System.out.println("checkpoint 4");
         }
         /*
         콘솔 출력 내용을 보면 프록시 객체인 것을 확인할 수 있음
         만약 Entity 클래스를 final 로 선언했다면 프록시 객체를 생성할 수 없어서 오류가 발생함
          */
+        System.out.println("checkpoint 5");
         System.out.println(userEntity.getClass().getName());
 
         /*
          세션이 이미 종료되어 있어서 값을 가져올 수 없음
          이 값을 사용하기 위해서는 entityManager 가 종료되기 전에 사용을 한번 해줘야 함
          */
+        System.out.println("checkpoint 6");
         System.out.println(userEntity.getName());
 
         return Optional.ofNullable(userEntity);
