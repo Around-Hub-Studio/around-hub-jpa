@@ -18,6 +18,10 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
       <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
       <!-- 필수 속성 끝 -->
 
+      <!-- 애플리케이션이 실행되면서 데이터베이스에 테이블 자동 생성 -->
+      <!-- create, update, validate, create-drop, none -->
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
+
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
 

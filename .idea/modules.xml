@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/id_generation/id_generation.iml" filepath="$PROJECT_DIR$/id_generation/id_generation.iml" />
       <module fileurl="file://$PROJECT_DIR$/join_one_to_one/join_one_to_one.iml" filepath="$PROJECT_DIR$/join_one_to_one/join_one_to_one.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple_example/simple_example.iml" filepath="$PROJECT_DIR$/simple_example/simple_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/value/value.iml" filepath="$PROJECT_DIR$/value/value.iml" />
     </modules>
   </component>
 </project>
