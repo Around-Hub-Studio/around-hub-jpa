@@ -10,10 +10,11 @@
         <option value="$PROJECT_DIR$/id_generation/pom.xml" />
         <option value="$PROJECT_DIR$/join_one_to_one/pom.xml" />
         <option value="$PROJECT_DIR$/value/pom.xml" />
+        <option value="$PROJECT_DIR$/entitymanager_transaction/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
