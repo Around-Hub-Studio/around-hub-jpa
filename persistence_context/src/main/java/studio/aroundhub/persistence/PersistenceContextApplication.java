@@ -1,14 +1,16 @@
-package studio.aroundhub.transaction;
+package studio.aroundhub.persistence;
 
-import studio.aroundhub.transaction.factory.CEntityManagerFactory;
+import studio.aroundhub.persistence.factory.CEntityManagerFactory;
+import studio.aroundhub.persistence.service.PersistenceService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class TransactionApplication {
+public class PersistenceContextApplication {
 
     public static void main(String[] args) throws IOException {
+        PersistenceService service = new PersistenceService();
 
         CEntityManagerFactory.initialization();
 
@@ -24,11 +26,12 @@ public class TransactionApplication {
                 System.out.println("System closed");
                 break;
 
-            } else if (splitCommand[0].equalsIgnoreCase("case 1")) {
-
-            } else if (splitCommand[0].equalsIgnoreCase("provider")) {
-
+            } else if (splitCommand[0].equalsIgnoreCase("case1")) {
+                service.case1();
+            } else if (splitCommand[0].equalsIgnoreCase("case2")) {
+                service.case2();
             }
         }
     }
+
 }

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="entity_manager_factory" />
+        <module name="persistence_context" />
         <module name="get_reference_example" />
         <module name="entitymanager_transaction" />
         <module name="id_generation" />
@@ -23,6 +24,7 @@
       <module name="get_reference_example" target="11" />
       <module name="id_generation" target="11" />
       <module name="join_one_to_one" target="11" />
+      <module name="persistence_context" target="11" />
       <module name="simple_example" target="11" />
       <module name="value" target="11" />
     </bytecodeTargetLevel>
